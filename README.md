@@ -22,4 +22,51 @@ Apply: On approval, Terraform performs the proposed operations in the correct or
 
 For example, if you update the properties of a VPC and change the number of virtual machines in that VPC, Terraform will recreate the VPC before scaling the virtual machines.
 
+Case: 01
+
+Meta-arguments in Terraform: 
+
+Meta-arguments in Terraform are special, built-in arguments that control the behavior of resources and modules, rather than configuring resource-specific attributes. They provide a way to manage the lifecycle, dependencies, and instantiation of infrastructure objects.
+Here are the key meta-arguments in Terraform: 
+count: Used to create multiple identical instances of a resource or module. It accepts a whole number, and each instance is managed individually by Terraform.
+Code
+
+    resource "aws_instance" "example" {
+      count = 3
+      ami           = "ami-0abcdef1234567890"
+      instance_type = "t2.micro"
+    }
+for_each: Provides a more flexible way to create multiple instances, allowing iteration over a set or map of values. This enables the creation of customized resources based on the unique keys and values in the collection.
+Code
+
+    resource "aws_s3_bucket" "website_buckets" {
+      for_each = toset(["my-first-bucket", "my-second-bucket"])
+      bucket = each.value
+    }
+depends_on: Establishes explicit dependencies between resources or modules. This ensures that a specific resource or module is created or updated only after its dependencies are fulfilled, even if Terraform's implicit dependency analysis doesn't capture it.
+Code
+
+    resource "aws_instance" "web" {
+      # ...
+      depends_on = [aws_db_instance.main_db]
+    }
+lifecycle: Controls the behavior of resource creation, updates, and destruction. It includes arguments like prevent_destroy, create_before_destroy, and ignore_changes to customize how Terraform manages resource changes.
+Code
+
+    resource "aws_instance" "example" {
+      # ...
+      lifecycle {
+        prevent_destroy = true
+        ignore_changes = [tags]
+      }
+    }
+provider: Specifies which provider configuration should be used for a particular resource or module, especially when multiple configurations of the same provider are defined.
+Code
+
+    resource "aws_instance" "example" {
+      provider = aws.us_east_1
+      # ...
+    }
+Meta-arguments are essential for building complex and robust infrastructure as code with Terraform, enabling efficient management of resource lifecycles and dependencies.
+
 
