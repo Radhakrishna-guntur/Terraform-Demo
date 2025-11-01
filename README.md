@@ -22,6 +22,61 @@ Apply: On approval, Terraform performs the proposed operations in the correct or
 
 For example, if you update the properties of a VPC and change the number of virtual machines in that VPC, Terraform will recreate the VPC before scaling the virtual machines.
 
+
+Case: 08
+
+𝐓𝐞𝐫𝐫𝐚𝐟𝐨𝐫𝐦 𝐏𝐫𝐨𝐯𝐢𝐬𝐢𝐨𝐧𝐞𝐫𝐬:
+
+<img width="720" height="404" alt="image" src="https://github.com/user-attachments/assets/44adac85-3f19-4a8c-aa06-f3666ef98add" />
+
+In Terraform, 𝐏𝐫𝐨𝐯𝐢𝐬𝐢𝐨𝐧𝐞𝐫𝐬 are a set of built-in functionalities that allow you to execute scripts, commands, or other configuration actions on remote resources after they’ve been created or destroyed. 
+
+Provisioners are often used for tasks like initializing software, configuring instances, or performing post-deployment setup. There are different types of provisioners in Terraform, each serving a specific purpose. Let’s explore the main types of provisioners and how to write them:
+
+
+𝟏.𝐋𝐨𝐜𝐚𝐥-𝐞𝐱𝐞𝐜 𝐏𝐫𝐨𝐯𝐢𝐬𝐢𝐨𝐧𝐞𝐫:
+
+The `local-exec` provisioner allows you to run commands or scripts on the machine where Terraform is executed, typically your local development machine or a CI/CD server. This provisioner is often used for tasks that don’t require access to the remote resource.
+
+
+Example:
+
+
+<img width="407" height="218" alt="image" src="https://github.com/user-attachments/assets/8831e5f2-fa3f-4bd7-ab19-e554829f1356" />
+
+
+
+In this example, the `local-exec` provisioner runs the `echo` command on the local machine after the AWS EC2 instance is created.
+
+𝟐. 𝐑𝐞𝐦𝐨𝐭𝐞-𝐞𝐱𝐞𝐜 𝐏𝐫𝐨𝐯𝐢𝐬𝐢𝐨𝐧𝐞𝐫:
+
+The `remote-exec` provisioner allows you to run commands or scripts on a remote resource over SSH or WinRM after the resource is created. This provisioner is commonly used for tasks like software installations and configuration on remote instances.
+
+
+Example:
+
+
+<img width="462" height="428" alt="image" src="https://github.com/user-attachments/assets/0974444a-1883-4128-a855-f1ba095b5588" />
+
+
+
+In this example, the `remote-exec` provisioner connects to the newly created EC2 instance using SSH and executes the specified inline script.
+
+𝟑. 𝐅𝐢𝐥𝐞 𝐏𝐫𝐨𝐯𝐢𝐬𝐢𝐨𝐧𝐞𝐫:
+
+The `file` provisioner allows you to copy files or directories from the local machine to a remote resource after it’s created. This provisioner is useful for transferring configuration files, scripts, or other assets to a remote instance.
+
+
+Example:
+
+<img width="389" height="393" alt="image" src="https://github.com/user-attachments/assets/e9793f4a-fb78-4056-a56b-d65345d1e67b" />
+
+
+
+In this example, the `file` provisioner copies a local file to the `/tmp` directory on the remote EC2 instance using SSH.
+
+
+
 Case: 09
 
 DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit-millisecond latency at any scale. Its flexible data model and reliable performance make DynamoDB a great fit for mobile, web, gaming, advertising technology, Internet of Things, and other applications.
