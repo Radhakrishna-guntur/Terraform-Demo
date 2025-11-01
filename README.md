@@ -22,7 +22,11 @@ Apply: On approval, Terraform performs the proposed operations in the correct or
 
 For example, if you update the properties of a VPC and change the number of virtual machines in that VPC, Terraform will recreate the VPC before scaling the virtual machines.
 
-Case: 01
+Case: 09
+
+DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit-millisecond latency at any scale. Its flexible data model and reliable performance make DynamoDB a great fit for mobile, web, gaming, advertising technology, Internet of Things, and other applications.
+
+Case: 10
 
 Meta-arguments in Terraform: 
 
