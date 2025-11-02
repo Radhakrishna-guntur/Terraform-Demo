@@ -129,3 +129,29 @@ Code
 Meta-arguments are essential for building complex and robust infrastructure as code with Terraform, enabling efficient management of resource lifecycles and dependencies.
 
 
+HashiCorp Certified:
+Terraform Associate (004)
+
+<img width="48" height="57" alt="image" src="https://github.com/user-attachments/assets/96467226-3617-410c-a6a8-094ba4c7480b" />
+
+
+Exam Objectives Overview
+The content in this article is tailored to match the objectives of the HashiCorp Certified Terraform Associate exam. Key topics include:
+
+Infrastructure as Code (IaC): Understand the IaC concept at a high level, compare popular IaC tools, and explore the core Terraform workflow.
+
+Terraform Providers: Learn about provider plugins, using multiple providers, version constraints, and aliases.
+
+Variables and Resources: Gain insights into input/output variables, resource attributes, dependencies, resource targeting, and data sources.
+
+Terraform State: Understand the significance of Terraform state, including managing local state and migrating to remote backends like S3.
+
+Terraform Fundamentals: Master reading, generating, and updating Terraform configurations. Topics include using loops, provisioners, built-in functions, operators, conditional expressions, local values, and dynamic blocks.
+
+Terraform CLI and Workspaces: Get acquainted with common CLI commands, lifecycle rules, resource states, logging, debugging, input parameters, and an introduction to Terraform workspaces.
+
+Terraform Modules: Discover why modules are essential, learn how to integrate modules from the Terraform Registry, and create your own modules complete with input and output variables.
+
+Terraform Cloud: Explore how Terraform Cloud supports collaborative infrastructure management, including account setup, organization and workspace creation, integration with version control systems, governance plans, and an overview of policy-as-code frameworks.
+
+
